@@ -86,9 +86,10 @@ const zooAnimals = [
   */
 
   function lowPopulationAnimals(arr){
-    let newArr = lowPopulationAnimals.filter(value => 5)
+    let newArr = arr.filter(value => 5)
+    return newArr
   }
-  console.log(lowPopulationAnimals);
+  console.log(lowPopulationAnimals);     
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -96,10 +97,16 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(arr){
+    const newValue = arr.reduce((currentItem, newItem)  => {
+      return currentItem + newItem.population
+    },0)
+      
+    return newValue
+    
   }
   
+   
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
@@ -109,8 +116,9 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(/*Your Code Here */){
-    /*Your Code Here */
+  function consume(a, b, cb){
+    cb(a,b)
+    return cb(a,b)
   }
  
   
